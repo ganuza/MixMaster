@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
+import Footer from '../Footer/Footer';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         }
         />
       </Routes>
+      <Footer />
     </main>
   )
 }
