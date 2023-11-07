@@ -1,0 +1,12 @@
+.header {
+  border: 2px solid black;
+  background-color: #D2400B;
+  height: 100%;
+  font-family: monoton;
+  font-size: 2rem;
+  color: #3C7F72;
+}
+
+h1 {
+  margin: 0;
+}

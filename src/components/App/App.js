@@ -1,10 +1,10 @@
-
+import Header from '../Header/Header';
 import './App.css';
 
 function App() {
   return (
     <main className='App'>
-      <h1>MixMaster</h1>
+      <Header className='header'/>
     </main>
   )
 }
