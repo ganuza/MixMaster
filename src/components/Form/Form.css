@@ -3,6 +3,9 @@ form {
 }
 
 .dropdown {
+  border: none;
+  background-color: #FFFBED;
+  color: #3C7F72;
   font-size: 2rem;
   border-radius: 30px;
   text-align: center;
