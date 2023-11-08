@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import './Form.css'
 
-const Form = () => {
+
+const Form = ({captureSpirit}) => {
   const [spirit, setSpirit] = useState('')
 
-  const submitSpirit = (event) => {
+  
     
+  captureSpirit(spirit)
+  
     
     
 
 
-  }
+  
   return (
     <form>
       <select 
@@ -19,7 +22,7 @@ const Form = () => {
         value={spirit}
         onChange={event => {
           setSpirit(event.target.value)
-          submitSpirit(event.target.value)}}>
+          }}>
         
           <option value=''>Choose Spirit</option>
           <option value='Gin'>Gin</option>
