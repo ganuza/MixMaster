@@ -1,0 +1,28 @@
+.cocktail-cards {
+  height: 500px;
+  width: 400px;
+  overflow: auto;
+}
+
+.cocktail-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.cocktail-card {
+  border: 15px solid #3C7F72;
+  background-color: #FFFBED;
+  border-radius: 10px;
+  margin: 15px;
+  min-height: 15%;
+  width: auto;
+  display: flex;
+}
+
+.cocktail-card h2 {
+  border-radius: calc(15px - 10px);
+  margin: 15px;
+}
+
+.cocktail-img {
+  width: 70px;
+}
