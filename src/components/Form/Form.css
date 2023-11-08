@@ -1,0 +1,9 @@
+form {
+  /* border: 2px solid blue; */
+}
+
+.dropdown {
+  font-size: 2rem;
+  border-radius: 30px;
+  text-align: center;
+}

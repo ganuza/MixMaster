@@ -1,0 +1,36 @@
+import { useState } from 'react'
+import './Form.css'
+
+const Form = () => {
+  const [spirit, setSpirit] = useState('')
+
+  const submitSpirit = (event) => {
+    
+    
+    
+
+
+  }
+  return (
+    <form>
+      <select 
+        className='dropdown'
+        name='spirit'
+        value={spirit}
+        onChange={event => {
+          setSpirit(event.target.value)
+          submitSpirit(event.target.value)}}>
+        
+          <option value=''>Choose Spirit</option>
+          <option value='Gin'>Gin</option>
+          <option value='Vodka'>Vodka</option>
+          <option value='Tequila'>Tequila</option>
+          <option value='Bourbon'>Bourbon</option>
+          <option value='Whiskey'>Whiskey</option>
+      </select>
+
+    </form>
+  )
+}
+
+export default Form
