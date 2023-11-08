@@ -8,7 +8,7 @@ const Header = () => {
       <h1>MixMaster</h1>
       <div className='header-links-container'>
         <NavLink className='home-link' to='/'>Home</NavLink>
-        <NavLink className='explore-link' to='/'>Choose Spirit</NavLink>
+        <NavLink className='explore-link' to='/cocktails'>Choose Spirit</NavLink>
       </div>
       
     </div>
