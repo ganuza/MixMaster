@@ -11,7 +11,7 @@ function App() {
       <Header className='header'/>
       <Routes>
         <Route path='/' element={
-          <Welcome />
+          <Welcome className='welcome'/>
         }
         />
         <Route path='/cocktails' element={
@@ -19,7 +19,7 @@ function App() {
         }
         />
       </Routes>
-      <Footer />
+      <Footer className='footer'/>
     </main>
   )
 }
