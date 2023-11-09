@@ -9,6 +9,7 @@
 }
 
 .cocktail-card {
+  text-align: left;
   border: 15px solid #3C7F72;
   background-color: #FFFBED;
   border-radius: 10px;
@@ -16,13 +17,30 @@
   min-height: 15%;
   width: auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cocktail-info {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .cocktail-card h2 {
   border-radius: calc(15px - 10px);
-  margin: 15px;
+  margin: 15px 10px 15px 15px;
 }
 
 .cocktail-img {
-  width: 70px;
+  height: 90px;
+}
+
+.recipe {
+  text-align: center;
+  margin: 0 10px 
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }

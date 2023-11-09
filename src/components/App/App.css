@@ -5,7 +5,6 @@
   grid-template-columns: 1fr;
   grid-template-areas:
     'header'
-    'welcome-container' 'all-questions-cards'
+    'welcome-container'
     'footer';
-  grid-gap: 1em;
 }
