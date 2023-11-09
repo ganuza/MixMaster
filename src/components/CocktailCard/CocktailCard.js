@@ -30,13 +30,23 @@ const CocktailCard = ({ cocktail }) => {
     return ingredients;
   };
 
-  
+  const extractMeasurements = (recipeData) => {
+
+    const measurements = []
+
+    Object.keys(recipeData).forEach(key => {
+      if (key.startsWith('strMeasure') && recipeData[key]) {
+        measurements.push(recipeData[key])
+      }
+    })
+    return measurements
+  }
   console.log('recipe: ', recipe)
   
   const ingredients = expanded && recipe ? extractIngredients(recipe) : [];
-  
+  const measurements = expanded && recipe ? extractMeasurements(recipe) : []
   console.log('ingredients: ', ingredients)
-  
+  console.log('measurements', measurements)
 
   
   return (
@@ -55,7 +65,7 @@ const CocktailCard = ({ cocktail }) => {
         <ul>
           {ingredients.map((ingredient, index) => (
             <li key={index}>
-              
+              {measurements[index] && `${measurements[index]} `}
               {ingredient}
             </li>
           ))}
