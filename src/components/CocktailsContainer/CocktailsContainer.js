@@ -11,7 +11,9 @@ const CocktailsContainer = () => {
   const captureSpirit = (spirit) => {
     setChosenSpirit(spirit);
   };
+  
   console.log('cocktail container cocktails: ', cocktails)
+
   useEffect(() => {
     if (chosenSpirit) {
       getCocktails(chosenSpirit)
@@ -22,6 +24,13 @@ const CocktailsContainer = () => {
     }
   }, [chosenSpirit]);
 
+  const cocktailCards = cocktails.map((cocktail) => {
+    return <CocktailCard
+      key={cocktail.idDrink}
+      cocktail={cocktail}
+    />
+  })
+
   return (
     <div className="cocktails-oval-container">
       <div className="cocktails-oval cocktails-overlap-3"></div>
@@ -30,9 +39,7 @@ const CocktailsContainer = () => {
       <div className="cocktails-selection-box">
         <Form captureSpirit={captureSpirit} />
         <div className="cocktail-cards">
-          {cocktails.map((cocktail) => (
-            <CocktailCard key={cocktail.idDrink} cocktail={cocktail} />
-          ))}
+          {cocktailCards}
         </div>
       </div>
     </div>
