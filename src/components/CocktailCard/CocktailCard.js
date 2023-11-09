@@ -11,11 +11,34 @@ const CocktailCard = ({ cocktail }) => {
   useEffect(() => {
     if (expanded) {
       getRecipe(cocktail.idDrink)
-        .then(data => setRecipe(data.drinks[0]))
+        .then(data => setRecipe(data.drinks[0])) // Extract the recipe data
         .catch(error => setRecipeFetchError(error.message));
     }
-  }, [expanded, cocktail.idDrink]);
+  }, [expanded, cocktail.idDrink])
 
+  const extractIngredients = (recipeData) => {
+    const ingredients = []
+
+    Object.keys(recipeData).forEach(key => {
+      if (key.startsWith('strIngredient') && recipeData[key]) {
+        ingredients.push(recipeData[key]);
+      }
+    });
+
+  
+
+    return ingredients;
+  };
+
+  
+  console.log('recipe: ', recipe)
+  
+  const ingredients = expanded && recipe ? extractIngredients(recipe) : [];
+  
+  console.log('ingredients: ', ingredients)
+  
+
+  
   return (
     <div className={`cocktail-card ${expanded ? 'expanded' : ''}`}>
       <div className="cocktail-info">
@@ -28,9 +51,17 @@ const CocktailCard = ({ cocktail }) => {
       </div>
       {expanded && recipe && (
         <div className="recipe">
-          <h3>Recipe:</h3>
-          <p>{recipe.strInstructions}</p>
-        </div>
+        <h3>Ingredients:</h3>
+        <ul>
+          {ingredients.map((ingredient, index) => (
+            <li key={index}>
+              
+              {ingredient}
+            </li>
+          ))}
+        </ul>
+        <h3>{recipe.strInstructions}</h3>
+      </div>
       )}
     </div>
   );
