@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import Form from '../Form/Form'
 import CocktailCard from '../CocktailCard/CocktailCard'
 import { getCocktails } from '../../apiCalls'
@@ -7,24 +8,27 @@ import './CocktailsContainer.css'
 
 const CocktailsContainer = () => {
   const [cocktails, setCocktails] = useState([])
-  const [chosenSpirit, setChosenSpirit] = useState('')
+  // const [chosenSpirit, setChosenSpirit] = useState('')
   const [cocktailsError, setCocktailsError] = useState('')
 
-  const captureSpirit = (spirit) => {
-    setChosenSpirit(spirit)
+  const {spirit} = useParams()
+  const navigate = useNavigate()
+
+  const captureSpirit = (chosenSpirit) => {
+    navigate(`/cocktails/${chosenSpirit}`)
   };
   
   console.log('cocktail container cocktails: ', cocktails)
 
   useEffect(() => {
-    if (chosenSpirit) {
-      getCocktails(chosenSpirit)
+    if (spirit) {
+      getCocktails(spirit)
         .then((data) => {
           setCocktails(data.drinks || [])
         })
         .catch((error) => setCocktailsError(error.message))
     }
-  }, [chosenSpirit])
+  }, [spirit])
 
   const cocktailCards = cocktails.map((cocktail) => {
     return <CocktailCard
@@ -39,10 +43,16 @@ const CocktailsContainer = () => {
       <div className="cocktails-oval cocktails-overlap-2"></div>
       <div className="cocktails-oval cocktails-overlap-1"></div>
       <div className="cocktails-selection-box">
-        <Form captureSpirit={captureSpirit} />
+        <div className="current-cocktail-message-form">
+          {!spirit ? <h2></h2> : 
+          
+          <h2>Cocktails Made with {spirit}</h2>}
+          <Form captureSpirit={captureSpirit} />
+          
+        </div>
         <div className="cocktail-cards">
-          {cocktailsError ? (<ErrorComponent error={cocktailsError} message="We're sorry, we can't find that resource right now."/>) :
-          !cocktails.length && chosenSpirit ? (
+          {cocktailsError ? ( <div className='cocktail-error-message'><h3>We're sorry, we can't find that page, please try again.</h3></div>) :
+          !cocktails.length && spirit ? (
             <p>Loading...</p>
           ) : (
             cocktailCards
