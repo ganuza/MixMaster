@@ -9,7 +9,12 @@ const Form = ({ captureSpirit }) => {
     const selectedSpirit = event.target.value
     setSpirit(selectedSpirit)
     captureSpirit(selectedSpirit)
+    clearInput()
   };
+
+  const clearInput = () => {
+    setSpirit('')
+  }
 
   return (
     <form>
@@ -31,7 +36,7 @@ const Form = ({ captureSpirit }) => {
         <option value='Mezcal'>Mezcal</option>
         <option value='Grand Marnier'>Grand Marnier</option>
         <option value='Vermouth'>Vermouth</option>
-        <option value='Fernet'>Fernet</option>
+        <option value='Campari'>Campari</option>
       </select>
     </form>
   )
