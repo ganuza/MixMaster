@@ -9,7 +9,12 @@ const Form = ({ captureSpirit }) => {
     const selectedSpirit = event.target.value
     setSpirit(selectedSpirit)
     captureSpirit(selectedSpirit)
+    clearInput()
   };
+
+  const clearInput = () => {
+    setSpirit('')
+  }
 
   return (
     <form>
