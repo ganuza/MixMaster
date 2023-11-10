@@ -11,7 +11,7 @@ const CocktailCard = ({ cocktail }) => {
   useEffect(() => {
     if (expanded) {
       getRecipe(cocktail.idDrink)
-        .then(data => setRecipe(data.drinks[0])) // Extract the recipe data
+        .then(data => setRecipe(data.drinks[0]))
         .catch(error => setRecipeFetchError(error.message));
     }
   }, [expanded, cocktail.idDrink])

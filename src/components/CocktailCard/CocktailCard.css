@@ -1,7 +1,12 @@
+.coctails-selection-box {
+  height: 80%;
+}
+
 .cocktail-cards {
-  height: 510px;
+  height: 100%;
   width: 400px;
   overflow: auto;
+  margin-left: 5%;
 }
 
 .cocktail-cards::-webkit-scrollbar {
@@ -20,6 +25,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .cocktail-info {
   display: flex;
   align-items: center;

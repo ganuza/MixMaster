@@ -1,8 +1,11 @@
 .footer {
   grid-area: footer;
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  /* border: 2px solid black; */
   background-color: #FFFBED;
-  height: 100%;
+  /* height: 100%; */
 
 }
 
@@ -10,8 +13,8 @@
 .red-stripe,
 .orange-stripe,
 .yellow-stripe {
-  height: 30px;
-  margin-top: 10px;
+  height: 20%;
+  margin-top: 0.75%;
 }
 
 .teal-stripe {
