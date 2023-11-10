@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import Form from '../Form/Form';
-import CocktailCard from '../CocktailCard/CocktailCard';
-import './CocktailsContainer.css';
-import { getCocktails } from '../../apiCalls';
+import { useState, useEffect } from 'react'
+import Form from '../Form/Form'
+import CocktailCard from '../CocktailCard/CocktailCard'
+import { getCocktails } from '../../apiCalls'
+import './CocktailsContainer.css'
 
 const CocktailsContainer = () => {
-  const [cocktails, setCocktails] = useState([]);
-  const [chosenSpirit, setChosenSpirit] = useState('');
+  const [cocktails, setCocktails] = useState([])
+  const [chosenSpirit, setChosenSpirit] = useState('')
 
   const captureSpirit = (spirit) => {
-    setChosenSpirit(spirit);
+    setChosenSpirit(spirit)
   };
   
   console.log('cocktail container cocktails: ', cocktails)
@@ -18,11 +18,11 @@ const CocktailsContainer = () => {
     if (chosenSpirit) {
       getCocktails(chosenSpirit)
         .then((data) => {
-          setCocktails(data.drinks || []);
+          setCocktails(data.drinks || [])
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
     }
-  }, [chosenSpirit]);
+  }, [chosenSpirit])
 
   const cocktailCards = cocktails.map((cocktail) => {
     return <CocktailCard
@@ -46,4 +46,4 @@ const CocktailsContainer = () => {
   );
 };
 
-export default CocktailsContainer;
+export default CocktailsContainer

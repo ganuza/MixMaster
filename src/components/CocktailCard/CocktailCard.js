@@ -1,18 +1,21 @@
-import { getRecipe } from '../../apiCalls';
-import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './CocktailCard.css';
+import { getRecipe } from '../../apiCalls'
+import { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import './CocktailCard.css'
 
 const CocktailCard = ({ cocktail }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [recipe, setRecipe] = useState(null);
-  const [recipeFetchError, setRecipeFetchError] = useState('');
+  const [expanded, setExpanded] = useState(false)
+  const [recipe, setRecipe] = useState(null)
+  const [recipeFetchError, setRecipeFetchError] = useState('')
+
+  console.log('cocktail: ', cocktail)
 
   useEffect(() => {
     if (expanded) {
       getRecipe(cocktail.idDrink)
         .then(data => setRecipe(data.drinks[0]))
-        .catch(error => setRecipeFetchError(error.message));
+        .catch(error => setRecipeFetchError(error.message))
     }
   }, [expanded, cocktail.idDrink])
 
@@ -21,14 +24,11 @@ const CocktailCard = ({ cocktail }) => {
 
     Object.keys(recipeData).forEach(key => {
       if (key.startsWith('strIngredient') && recipeData[key]) {
-        ingredients.push(recipeData[key]);
+        ingredients.push(recipeData[key])
       }
-    });
-
-  
-
-    return ingredients;
-  };
+    })
+    return ingredients
+  }
 
   const extractMeasurements = (recipeData) => {
 
@@ -43,7 +43,7 @@ const CocktailCard = ({ cocktail }) => {
   }
   console.log('recipe: ', recipe)
   
-  const ingredients = expanded && recipe ? extractIngredients(recipe) : [];
+  const ingredients = expanded && recipe ? extractIngredients(recipe) : []
   const measurements = expanded && recipe ? extractMeasurements(recipe) : []
   console.log('ingredients: ', ingredients)
   console.log('measurements', measurements)
@@ -74,7 +74,15 @@ const CocktailCard = ({ cocktail }) => {
       </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default CocktailCard;
+export default CocktailCard
+
+CocktailCard.propTypes = {
+  cocktail: PropTypes.shape({
+    idDrink: PropTypes.string.isRequired,
+    strDrink: PropTypes.string.isRequired,
+    strDrinkThumb: PropTypes.string
+  })
+}
