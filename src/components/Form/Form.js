@@ -1,19 +1,13 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 import './Form.css'
 
 
 const Form = ({captureSpirit}) => {
   const [spirit, setSpirit] = useState('')
 
-  
-    
   captureSpirit(spirit)
-  
     
-    
-
-
-  
   return (
     <form>
       <select 
@@ -23,7 +17,6 @@ const Form = ({captureSpirit}) => {
         onChange={event => {
           setSpirit(event.target.value)
           }}>
-        
           <option value=''>Choose Spirit</option>
           <option value='Gin'>Gin</option>
           <option value='Vodka'>Vodka</option>
@@ -33,9 +26,12 @@ const Form = ({captureSpirit}) => {
           <option value='Rum'>Rum</option>
           <option value='Mezcal'>Mezcal</option>
       </select>
-
     </form>
   )
 }
 
 export default Form
+
+Form.propTypes = {
+  captureSpirit: PropTypes.func.isRequired
+}
