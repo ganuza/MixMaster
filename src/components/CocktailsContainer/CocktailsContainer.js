@@ -21,6 +21,7 @@ const CocktailsContainer = () => {
   console.log('cocktail container cocktails: ', cocktails)
 
   useEffect(() => {
+    setCocktailsError('')
     if (spirit) {
       getCocktails(spirit)
         .then((data) => {
