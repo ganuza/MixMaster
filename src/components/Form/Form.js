@@ -36,7 +36,7 @@ const Form = ({ captureSpirit }) => {
         <option value='Mezcal'>Mezcal</option>
         <option value='Grand Marnier'>Grand Marnier</option>
         <option value='Vermouth'>Vermouth</option>
-        <option value='Fernet'>Fernet</option>
+        <option value='Campari'>Campari</option>
       </select>
     </form>
   )
