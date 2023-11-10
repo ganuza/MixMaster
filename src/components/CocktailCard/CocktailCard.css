@@ -7,6 +7,7 @@
   width: 400px;
   overflow: auto;
   margin-left: 5%;
+  font-family: rubik;
 }
 
 .cocktail-cards::-webkit-scrollbar {

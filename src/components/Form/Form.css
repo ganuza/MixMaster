@@ -6,9 +6,10 @@ form {
   border: none;
   background-color: #FFFBED;
   color: #3C7F72;
-  font-size: 1.5rem;
   border-radius: 30px;
   text-align: center;
   width: 100%;
+  font-size: 1.5rem;
+  font-family: rubik;
   /* margin-right: 10px; */
 }
