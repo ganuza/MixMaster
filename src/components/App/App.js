@@ -18,7 +18,7 @@ function App() {
           <CocktailsContainer />
         }/>
         <Route path='*' element={
-          <ErrorComponent message="The page you're looking for doesn't exist.  Please Select the Home link or the Choose Spirit link above."/>
+          <ErrorComponent message="The page you're looking for doesn't exist.  Please Select the Home link or the Choose Spirit link above to continue."/>
         }/>
       </Routes>
       <Footer className='footer'/>

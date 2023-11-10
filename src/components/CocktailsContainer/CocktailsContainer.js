@@ -42,7 +42,7 @@ const CocktailsContainer = () => {
         <Form captureSpirit={captureSpirit} />
         <div className="cocktail-cards">
           {cocktailsError ? (<ErrorComponent error={cocktailsError} message="We're sorry, we can't find that resource right now."/>) :
-          !cocktails ? (
+          !cocktails.length && chosenSpirit ? (
             <p>Loading...</p>
           ) : (
             cocktailCards
