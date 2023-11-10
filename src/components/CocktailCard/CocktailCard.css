@@ -3,6 +3,9 @@
 }
 
 .cocktail-cards {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
   height: 100%;
   width: 400px;
   overflow: auto;
@@ -10,6 +13,19 @@
   font-family: rubik;
 }
 
+.cocktail-error-message {
+  color: #FFFBED;
+  font-size: 1.5rem;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-left: 15%;
+}
+
+.oval-container {
+  background-color: none;
+}
 .cocktail-cards::-webkit-scrollbar {
   display: none;
 }
@@ -20,7 +36,7 @@
   background-color: #FFFBED;
   border-radius: 10px;
   margin: 15px;
-  min-height: 15%;
+  min-height: 10%;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -50,4 +66,8 @@
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.current-cocktail-message-form {
+  color: #FFFBED;
 }
