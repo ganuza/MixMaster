@@ -1,54 +1,54 @@
-import { getRecipe } from '../../apiCalls'
-import { useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import PropTypes from 'prop-types'
-import './CocktailCard.css'
+import { getRecipe } from '../../apiCalls';
+import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ErrorComponent from '../ErrorComponent/ErrorComponent';
+import PropTypes from 'prop-types';
+import './CocktailCard.css';
 
 const CocktailCard = ({ cocktail }) => {
-  const [expanded, setExpanded] = useState(false)
-  const [recipe, setRecipe] = useState(null)
-  const [recipeFetchError, setRecipeFetchError] = useState('')
+  const [expanded, setExpanded] = useState(false);
+  const [recipe, setRecipe] = useState(null);
+  const [recipeFetchError, setRecipeFetchError] = useState('');
 
-  console.log('cocktail: ', cocktail)
+  console.log('cocktail: ', cocktail);
 
   useEffect(() => {
     if (expanded) {
       getRecipe(cocktail.idDrink)
-        .then(data => setRecipe(data.drinks[0]))
-        .catch(error => setRecipeFetchError(error.message))
+        .then((data) => setRecipe(data.drinks[0]))
+        .catch((error) => setRecipeFetchError(error.message));
     }
-  }, [expanded, cocktail.idDrink])
+  }, [expanded, cocktail.idDrink]);
 
   const extractIngredients = (recipeData) => {
-    const ingredients = []
+    const ingredients = [];
 
-    Object.keys(recipeData).forEach(key => {
+    Object.keys(recipeData).forEach((key) => {
       if (key.startsWith('strIngredient') && recipeData[key]) {
-        ingredients.push(recipeData[key])
+        ingredients.push(recipeData[key]);
       }
-    })
-    return ingredients
-  }
+    });
+    return ingredients;
+  };
 
   const extractMeasurements = (recipeData) => {
+    const measurements = [];
 
-    const measurements = []
-
-    Object.keys(recipeData).forEach(key => {
+    Object.keys(recipeData).forEach((key) => {
       if (key.startsWith('strMeasure') && recipeData[key]) {
-        measurements.push(recipeData[key])
+        measurements.push(recipeData[key]);
       }
-    })
-    return measurements
-  }
-  console.log('recipe: ', recipe)
-  
-  const ingredients = expanded && recipe ? extractIngredients(recipe) : []
-  const measurements = expanded && recipe ? extractMeasurements(recipe) : []
-  console.log('ingredients: ', ingredients)
-  console.log('measurements', measurements)
+    });
+    return measurements;
+  };
 
-  
+  console.log('recipe: ', recipe);
+
+  const ingredients = expanded && recipe ? extractIngredients(recipe) : [];
+  const measurements = expanded && recipe ? extractMeasurements(recipe) : [];
+  console.log('ingredients: ', ingredients);
+  console.log('measurements', measurements);
+
   return (
     <div className={`cocktail-card ${expanded ? 'expanded' : ''}`}>
       <div className="cocktail-info">
@@ -59,30 +59,41 @@ const CocktailCard = ({ cocktail }) => {
           onClick={() => setExpanded(!expanded)}
         />
       </div>
-      {expanded && recipe && (
+      {recipeFetchError && (
+        <ErrorComponent error={recipeFetchError} message="We're sorry, we can't find that resource right now." />
+      )}
+      {!recipeFetchError && (
+        expanded && !recipe ? (
+          <p>Fetching Recipe...</p>
+        ) : (
         <div className="recipe">
-        <h3>Ingredients:</h3>
-        <ul>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}>
-              {measurements[index] && `${measurements[index]} `}
-              {ingredient}
-            </li>
-          ))}
-        </ul>
-        <h3>{recipe.strInstructions}</h3>
-      </div>
+        {expanded && (
+          <>
+            <h3>Ingredients:</h3>
+            <ul>
+            {ingredients.map((ingredient, index) => (
+              <li key={index}>
+                {measurements[index] && `${measurements[index]} `}
+                {ingredient}
+              </li>
+            ))}
+            </ul>
+            <h3>{recipe?.strInstructions}</h3>
+          </>
+        )}
+        </div>
+        )
       )}
     </div>
-  )
-}
-
-export default CocktailCard
+  );
+};
 
 CocktailCard.propTypes = {
   cocktail: PropTypes.shape({
     idDrink: PropTypes.string.isRequired,
     strDrink: PropTypes.string.isRequired,
-    strDrinkThumb: PropTypes.string
-  })
-}
+    strDrinkThumb: PropTypes.string,
+  }),
+};
+
+export default CocktailCard;
