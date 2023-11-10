@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react'
 import Form from '../Form/Form'
 import CocktailCard from '../CocktailCard/CocktailCard'
 import { getCocktails } from '../../apiCalls'
+import ErrorComponent from '../ErrorComponent/ErrorComponent'
 import './CocktailsContainer.css'
 
 const CocktailsContainer = () => {
   const [cocktails, setCocktails] = useState([])
   const [chosenSpirit, setChosenSpirit] = useState('')
+  const [cocktailsError, setCocktailsError] = useState('')
 
   const captureSpirit = (spirit) => {
     setChosenSpirit(spirit)
@@ -20,7 +22,7 @@ const CocktailsContainer = () => {
         .then((data) => {
           setCocktails(data.drinks || [])
         })
-        .catch((error) => console.log(error))
+        .catch((error) => setCocktailsError(error.message))
     }
   }, [chosenSpirit])
 
@@ -39,7 +41,13 @@ const CocktailsContainer = () => {
       <div className="cocktails-selection-box">
         <Form captureSpirit={captureSpirit} />
         <div className="cocktail-cards">
-          {cocktailCards}
+          {cocktailsError ? (<ErrorComponent error={cocktailsError} message="We're sorry, we can't find that resource right now."/>) :
+          !cocktails ? (
+            <p>Loading...</p>
+          ) : (
+            cocktailCards
+          )}
+          
         </div>
       </div>
     </div>
