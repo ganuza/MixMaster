@@ -6,8 +6,9 @@ form {
   border: none;
   background-color: #FFFBED;
   color: #3C7F72;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 30px;
   text-align: center;
-  width: 90%;
+  width: 100%;
+  /* margin-right: 10px; */
 }
