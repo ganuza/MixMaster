@@ -9,8 +9,6 @@ const CocktailCard = ({ cocktail }) => {
   const [recipe, setRecipe] = useState(null)
   const [recipeFetchError, setRecipeFetchError] = useState('')
 
-  console.log('cocktail: ', cocktail);
-
   useEffect(() => {
     if (expanded) {
       getRecipe(cocktail.idDrink)
@@ -41,12 +39,8 @@ const CocktailCard = ({ cocktail }) => {
     return measurements
   }
 
-  console.log('recipe: ', recipe)
-
   const ingredients = expanded && recipe ? extractIngredients(recipe) : []
   const measurements = expanded && recipe ? extractMeasurements(recipe) : []
-  console.log('ingredients: ', ingredients)
-  console.log('measurements', measurements)
 
   return (
     <div className={`cocktail-card ${expanded ? 'expanded' : ''}`}>

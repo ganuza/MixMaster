@@ -14,22 +14,21 @@ const CocktailsContainer = () => {
 
   const captureSpirit = (chosenSpirit) => {
     navigate(`/cocktails/${chosenSpirit}`)
-  };
-  
-  console.log('cocktail container cocktails: ', cocktails)
+  }
 
   useEffect(() => {
     setCocktailsError('')
     if (spirit) {
       getCocktails(spirit)
-        .then((data) => {
-          setCocktails(data.drinks || [])
-        })
-        .catch((error) => setCocktailsError(error.message))
+      .then((data) => {
+        setCocktails(data.drinks || [])
+      })
+      .catch((error) => setCocktailsError(error.message))
     }
   }, [spirit])
 
   const cocktailCards = cocktails.map((cocktail) => {
+
     return <CocktailCard
       key={cocktail.idDrink}
       cocktail={cocktail}
@@ -44,10 +43,8 @@ const CocktailsContainer = () => {
       <div className="cocktails-selection-box">
         <div className="current-cocktail-message-form">
           {!spirit ? <h2></h2> : 
-          
           <h2>Cocktails Made with {spirit}</h2>}
           <Form captureSpirit={captureSpirit} />
-          
         </div>
         <div className="cocktail-cards">
           {cocktailsError ? ( <div className='cocktail-error-message'><h3>ERROR {cocktailsError}. Please try again later.</h3></div>) :
@@ -56,11 +53,10 @@ const CocktailsContainer = () => {
           ) : (
             cocktailCards
           )}
-          
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default CocktailsContainer

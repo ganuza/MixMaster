@@ -31,6 +31,7 @@ describe('coctails page', () => {
     cy.get('.recipe').children().should('have.length', 3)
     cy.get('.recipe > h3').should('contain', 'Ingredients:')
     cy.get('ul > :nth-child(1)').contains('li', '2 oz', 'Sour mix')
+    cy.get('ul > :nth-child(4)').contains('li', 'Add splash Orange juice')
     cy.get('.recipe > :nth-child(3)').contains('h3', 'Shake sour mix, tequila and amaretto with ice. Strain into highball glass. Add a splash of OJ. Garnish with orange slice and a cherry.')
   })
 

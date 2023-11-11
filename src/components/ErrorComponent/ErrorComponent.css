@@ -52,20 +52,4 @@
 
 .selection-box-text {
   color: #FFFBED;
-  /* font-size: 2rem; */
 }
-/* 
-@media screen and (max-width: 1235px) {
-  .cocktail-cards {
-    display: flex;
-    justify-content: center;
-  }
-  .cocktail-error-message {
-    margin: 5px;
-    height: 80%;
-  }
-
-  .current-cocktail-message-form {
-    margin: 0;
-  }
-} */
