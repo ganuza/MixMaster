@@ -55,6 +55,8 @@
   display: flex;
   align-items: center;
   margin-right: 10px;
+  width: 80%;
+  font-size: .80rem;
 }
 
 .cocktail-card h2 {
@@ -63,7 +65,7 @@
 }
 
 .cocktail-img {
-  height: 90px;
+  height: 7vh;
 }
 
 .recipe {
@@ -78,4 +80,49 @@ ul {
 
 .current-cocktail-message-form {
   color: #FFFBED;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1235px) {
+  .cocktail-cards {
+    margin-left: 0px;
+    height: 60%;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .cocktail-cards {
+    height: 50%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .cocktail-cards {
+    width: 100%;
+  }
+
+  .cocktail-card {
+    align-items: center;
+  }
+
+  .cocktail-info {
+    flex-direction: column;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .cocktail-card h2 {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+    .cocktail-info {
+      font-size: .65rem;
+    }
+    .recipe {
+      font-size: .75rem;
+    }
 }
