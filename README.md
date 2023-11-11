@@ -9,6 +9,13 @@ This Showcase project was assigned as part of Turing School of Software Design M
 
 ### **APP PREVIEW**	
 
+![image](https://github.com/ganuza/MixMaster/assets/31826116/ebe6947d-6107-4ecb-80b1-d7f4f25fe1a9)
+
+![image](https://github.com/ganuza/MixMaster/assets/31826116/856697a0-0273-4778-919a-3c161c78cb83)
+
+![image](https://github.com/ganuza/MixMaster/assets/31826116/6ebdda15-62d0-4991-9387-e8d3844621bd)
+
+![image](https://github.com/ganuza/MixMaster/assets/31826116/ad7ce021-c8c8-4b9e-8726-e7040a8560ba)
 
 
 ### **GOALS**
