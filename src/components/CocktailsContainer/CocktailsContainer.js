@@ -52,7 +52,7 @@ const CocktailsContainer = () => {
           
         </div>
         <div className="cocktail-cards">
-          {cocktailsError ? ( <div className='cocktail-error-message'><h3>We're sorry, we can't find that page, please try again.</h3></div>) :
+          {cocktailsError ? ( <div className='cocktail-error-message'><h3>ERROR {cocktailsError}. Please try again later.</h3></div>) :
           !cocktails.length && spirit ? (
             <p>Loading...</p>
           ) : (
