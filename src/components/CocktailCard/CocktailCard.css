@@ -119,14 +119,20 @@ ul {
   }
 }
 
-@media screen and (max-width: 380px) {
-    .cocktail-cards {
-      height: 30%;
-    }
-    .cocktail-info {
-      font-size: .65rem;
-    }
-    .recipe {
-      font-size: .75rem;
-    }
+@media screen and (max-width: 425px) {
+  .cocktail-cards {
+    height: 30%;
+  }
+  .cocktail-info {
+    font-size: .65rem;
+  }
+  .recipe {
+    font-size: .75rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .recipe {
+    font-size: .55rem;
+  }
 }
