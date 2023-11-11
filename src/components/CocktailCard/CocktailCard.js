@@ -60,7 +60,7 @@ const CocktailCard = ({ cocktail }) => {
         />
       </div>
       {recipeFetchError && (
-        <ErrorComponent error={recipeFetchError} message="We're sorry, we can't find that resource right now." />
+        <div className='recipe-error-message'><h3>ERROR {recipeFetchError}. Apologies, please try again later.</h3></div>
       )}
       {!recipeFetchError && (
         expanded && !recipe ? (
