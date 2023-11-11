@@ -1,6 +1,5 @@
 .header {
   grid-area: header;
-  border: 2px solid black;
   background-color: #D2400B;
   height: 100%;
   font-family: monoton;
@@ -22,6 +21,7 @@ h1 {
   color: #FFFBED;
   text-decoration: none;
 }
+
 .active {
   text-decoration: underline #FFAF00;
   text-decoration-thickness: 4px;
@@ -31,5 +31,4 @@ h1 {
   width: 25%;
   display: flex;
   justify-content: space-between;
-  
 }

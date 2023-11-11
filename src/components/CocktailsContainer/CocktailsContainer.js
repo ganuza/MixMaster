@@ -3,12 +3,10 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Form from '../Form/Form'
 import CocktailCard from '../CocktailCard/CocktailCard'
 import { getCocktails } from '../../apiCalls'
-import ErrorComponent from '../ErrorComponent/ErrorComponent'
 import './CocktailsContainer.css'
 
 const CocktailsContainer = () => {
   const [cocktails, setCocktails] = useState([])
-  // const [chosenSpirit, setChosenSpirit] = useState('')
   const [cocktailsError, setCocktailsError] = useState('')
 
   const {spirit} = useParams()

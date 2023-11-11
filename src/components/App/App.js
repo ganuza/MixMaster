@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
-import Header from '../Header/Header';
-import Welcome from '../Welcome/Welcome';
-import Footer from '../Footer/Footer';
-import CocktailsContainer from '../CocktailsContainer/CocktailsContainer';
-import ErrorComponent from '../ErrorComponent/ErrorComponent';
-import './App.css';
+import Header from '../Header/Header'
+import Welcome from '../Welcome/Welcome'
+import Footer from '../Footer/Footer'
+import CocktailsContainer from '../CocktailsContainer/CocktailsContainer'
+import ErrorComponent from '../ErrorComponent/ErrorComponent'
+import './App.css'
 
-function App() {
+const App = () => {
+
   return (
     <main className='App'>
       <Header className='header'/>
@@ -29,4 +30,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

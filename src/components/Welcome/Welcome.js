@@ -3,7 +3,6 @@ import './Welcome.css'
 const Welcome = () => {
 
   return (
-    
     <div className="oval-container">
     <div className="oval overlap-3"></div>
     <div className="oval overlap-2"></div>

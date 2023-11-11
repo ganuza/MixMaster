@@ -1,7 +1,3 @@
-form {
-  /* width: 30%; */
-}
-
 .dropdown {
   border: none;
   background-color: #FFFBED;
@@ -11,5 +7,4 @@ form {
   width: 100%;
   font-size: 1.5rem;
   font-family: rubik;
-  /* margin-right: 10px; */
 }
