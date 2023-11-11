@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# MixMaster
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Deployed Link
 
-## Available Scripts
 
-In the project directory, you can run:
+### **ABSTRACT**
+Bartenders and cocktail fans will be excited to have this useful app on hand as they look for drink recipes based on a spirit they have on hand.
+This Showcase project was assigned as part of Turing School of Software Design Module 3 Front End curriculum.  Our task was to design an app and implement all of the technologies we have been learning over the course of the last 5 weeks. MixMaster makes network requests to TheCocktailDB api to access cocktail data and recipe data in response to user input.  A user can select a spirit to get a listing of cocktails that include that spirit.  Clicking on a chevron of a particular cocktail card reveals the recipe and instructions for how to make it.
 
-### `npm start`
+### **APP PREVIEW**	
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### **GOALS**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use the technology you’ve been working with over the course of the module to demonstrate mastery of the following:
+- React
+- Router
+- Asynchronous JavaScript
+- End to end testing with Cypress
 
-### `npm run build`
+### **CONTRIBUTORS**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Adrian Zabolizki](https://github.com/ganuza) 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **INSTALLATION INSTRUCTIONS**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install the prerequisites:
+  Node.js
+  npm
+  Git
+2. Clone the repository:
+  Open a terminal window.
+  Navigate to the directory where you want to clone the repository.
+  Run the following command:
+  ```
+  git clone https://github.com/ganuza/MixMaster
+  ```
+3. Install the dependencies:
+  Run the following command in the cloned repository directory:
+  ```
+  npm install
+  ```
+4. Run the React app:
+  Run the following command in the cloned repository directory:
+  ```
+  npm start
+  ```
+5. Open the app in your web browser by navigating to 
+  ```
+  http://localhost:3000
+  ```
+### **TECHNOLOGIES**
+- JavaScript
+- CSS
+- HTML5
+- React
+- React Router
+- Cypress
+- GitHub
+- GitHub Projects
 
-### `npm run eject`
+### **WINS + CHALLENGES**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##### WINS
+- Putting together newly learned technologies of React, Router, and Cypress testing to showcase all of my learning this module
+- A beautiful app that is deployed and usable!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##### CHALLENGES
+- Time constraint:  This project was built in the span of less than a week
+- Cypress testing:  It takes a bit of time to do robust testing
