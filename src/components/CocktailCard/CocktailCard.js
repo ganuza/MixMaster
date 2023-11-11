@@ -1,14 +1,13 @@
-import { getRecipe } from '../../apiCalls';
-import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ErrorComponent from '../ErrorComponent/ErrorComponent';
-import PropTypes from 'prop-types';
-import './CocktailCard.css';
+import { getRecipe } from '../../apiCalls'
+import { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
+import './CocktailCard.css'
 
 const CocktailCard = ({ cocktail }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [recipe, setRecipe] = useState(null);
-  const [recipeFetchError, setRecipeFetchError] = useState('');
+  const [expanded, setExpanded] = useState(false)
+  const [recipe, setRecipe] = useState(null)
+  const [recipeFetchError, setRecipeFetchError] = useState('')
 
   console.log('cocktail: ', cocktail);
 
@@ -16,38 +15,38 @@ const CocktailCard = ({ cocktail }) => {
     if (expanded) {
       getRecipe(cocktail.idDrink)
         .then((data) => setRecipe(data.drinks[0]))
-        .catch((error) => setRecipeFetchError(error.message));
+        .catch((error) => setRecipeFetchError(error.message))
     }
-  }, [expanded, cocktail.idDrink]);
+  }, [expanded, cocktail.idDrink])
 
   const extractIngredients = (recipeData) => {
-    const ingredients = [];
+    const ingredients = []
 
     Object.keys(recipeData).forEach((key) => {
       if (key.startsWith('strIngredient') && recipeData[key]) {
-        ingredients.push(recipeData[key]);
+        ingredients.push(recipeData[key])
       }
     });
     return ingredients;
   };
 
   const extractMeasurements = (recipeData) => {
-    const measurements = [];
+    const measurements = []
 
     Object.keys(recipeData).forEach((key) => {
       if (key.startsWith('strMeasure') && recipeData[key]) {
-        measurements.push(recipeData[key]);
+        measurements.push(recipeData[key])
       }
-    });
-    return measurements;
-  };
+    })
+    return measurements
+  }
 
-  console.log('recipe: ', recipe);
+  console.log('recipe: ', recipe)
 
-  const ingredients = expanded && recipe ? extractIngredients(recipe) : [];
-  const measurements = expanded && recipe ? extractMeasurements(recipe) : [];
-  console.log('ingredients: ', ingredients);
-  console.log('measurements', measurements);
+  const ingredients = expanded && recipe ? extractIngredients(recipe) : []
+  const measurements = expanded && recipe ? extractMeasurements(recipe) : []
+  console.log('ingredients: ', ingredients)
+  console.log('measurements', measurements)
 
   return (
     <div className={`cocktail-card ${expanded ? 'expanded' : ''}`}>
@@ -85,8 +84,10 @@ const CocktailCard = ({ cocktail }) => {
         )
       )}
     </div>
-  );
-};
+  )
+}
+
+export default CocktailCard
 
 CocktailCard.propTypes = {
   cocktail: PropTypes.shape({
@@ -94,6 +95,4 @@ CocktailCard.propTypes = {
     strDrink: PropTypes.string.isRequired,
     strDrinkThumb: PropTypes.string,
   }),
-};
-
-export default CocktailCard;
+}

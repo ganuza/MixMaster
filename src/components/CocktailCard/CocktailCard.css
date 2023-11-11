@@ -3,14 +3,25 @@
 }
 
 .cocktail-cards {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
   height: 100%;
   width: 400px;
-  overflow: auto;
+  overflow-y: auto;
   margin-left: 5%;
   font-family: rubik;
+}
+
+.cocktail-cards::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cocktail-cards::-webkit-scrollbar-thumb {
+  background-color: #D2400B;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.cocktail-cards::-webkit-scrollbar-track {
+  background-color: #fffbed06;
 }
 
 .cocktail-error-message {
@@ -25,9 +36,6 @@
 
 .oval-container {
   background-color: none;
-}
-.cocktail-cards::-webkit-scrollbar {
-  display: none;
 }
 
 .cocktail-card {
