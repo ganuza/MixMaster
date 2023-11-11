@@ -1,0 +1,19 @@
+{
+  "drinks": [
+      {
+          "strDrink": "Amaretto Stone Sour Alternative",
+          "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/wutxqr1472720012.jpg",
+          "idDrink": "16100"
+      },
+      {
+          "strDrink": "Apple Grande",
+          "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/wqrptx1472668622.jpg",
+          "idDrink": "16289"
+      },
+      {
+          "strDrink": "Bloody Maria",
+          "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/yz0j6z1504389461.jpg",
+          "idDrink": "11112"
+      }
+  ]
+}
