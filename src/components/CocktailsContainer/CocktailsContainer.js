@@ -42,7 +42,7 @@ const CocktailsContainer = () => {
       <div className="cocktails-oval cocktails-overlap-1"></div>
       <div className="cocktails-selection-box">
         <div className="current-cocktail-message-form">
-          {!spirit ? <h2></h2> : 
+          {!spirit ? null : 
           <h2>Cocktails Made with {spirit}</h2>}
           <Form captureSpirit={captureSpirit} />
         </div>
