@@ -53,3 +53,9 @@
   color: #FFFBED;
   font-size: 2rem;
 }
+
+@media screen and (max-width: 460px) {
+  .selection-box-text {
+    font-size: 1.55rem;
+  } 
+}
